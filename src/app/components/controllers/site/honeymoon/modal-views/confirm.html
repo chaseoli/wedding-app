@@ -1,0 +1,41 @@
+<div class="container-fluid">
+
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <p class="text-muted" style="padding-top:25px">Please confirm that the following infomration is correct:</p>
+
+        <dl class="confirm dl-horizontal">
+
+            <dt>Giver</dt>
+            <dd>{{modal.gift.giver}}</dd>
+
+            <dt>For</dt>
+            <dd>{{modal.model.name}}</dd>
+
+            <dt>email</dt>
+            <dd>{{modal.gift.email}}</dd>
+
+            <dt>Gift Amount</dt>
+            <dd>{{modal.gift.amount | currency}}</dd>
+
+            <dt>Payment Type</dt>            
+            <dd ng-show="modal.gift.option === 'payment'">Online payment</dd>
+            <dd ng-show="modal.gift.option === 'pledge'">Pay by cash or check at the wedding</dd>
+
+            <dt ng-show="modal.gift.option === 'payment'">Credit Card</dt>
+            <dd ng-show="modal.gift.option === 'payment'">{{modal.payment.details.cardType}} ending in {{modal.payment.details.lastTwo}}</dd>
+
+        </dl>
+
+        <p class="text-muted">
+            By clicking submit, I confirm that the information above is correct.
+        </p>
+
+        <div class="col-sm-12">
+            <button class="btn btn-raised btn-default" ng-click="modal.selectView('info', 2)">Back</button>
+            <button class="btn btn-raised btn-success" ng-click="modal.sendGift(); modal.submitted = true" ng-disabled="modal.submitted">Submit my gift!</button>            
+        </div>
+
+    </div>
+
+</div>

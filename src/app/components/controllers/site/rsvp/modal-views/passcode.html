@@ -1,0 +1,39 @@
+<div class="container-fluid">
+
+    <div class="row">
+
+        <form name="form" novalidate ng-submit="modal.submitPasscode(passcode)">
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Invitation Passcode</label>
+                <div class="col-md-4">
+                    <input type="text" name="code" placeholder="Enter your passcode here..." class="form-control" ng-model="passcode" required/>
+                    <p ng-show="form.code.$invalid" class="text-danger">Required</p>
+                    <p ng-show="modal.message" class="text-danger" ng-bind="modal.message"></p>
+                </div>
+                <div class="col-sm-6">                    
+                    <i class="material-icons" data-placement="right" data-trigger="click" data-animation="am-flip-x" bs-popover="modal.popover.passcode">help</i>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <div class="col-sm-8 col-sm-offset-2">
+
+                    <p class="text-muted">Click next to continue.</p>
+
+                    <div class="col-sm-12">
+                        <!--<button class="btn btn-raised btn-default" ng-click="modal.selectView('info', 2)">Back</button>-->
+                        <button type="submit" class="btn btn-raised btn-success">Next</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

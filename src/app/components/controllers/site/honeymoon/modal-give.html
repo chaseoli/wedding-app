@@ -1,0 +1,47 @@
+<div class="modal ng-scope center am-fade-and-scale" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1070;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header ng-hide" aria-hidden="true"><button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title">Give</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="progress-wrap">
+                    <div id="progress-container">
+                        <div class="line"></div>
+                        <ul>
+                            <!-- Add or remove steps as you please -->
+                            <!--<li ng-class="{'active' : modal.stage === 1, 'done' : modal.stage > 1}">
+                                <p>Give Type</p>
+                                <span ng-if="modal.stage <= 1">1</span>
+                            </li>-->
+                            <li ng-class="{'active' : modal.stage === 2, 'done' : modal.stage > 2}">
+                                <p>Giver Information</p>
+                                <span ng-if="modal.stage <= 2">1</span>
+                            </li>
+                            <li ng-class="{'active' : modal.stage === 3, 'done' : modal.stage > 3}">
+                                <p>Pledge</p>
+                                <span ng-if="modal.stage <= 3">2</span>
+                            </li>
+                            <li ng-class="{'active' : modal.stage === 4, 'done' : modal.stage > 4}">
+                                <p>Confirm</p>
+                                <span ng-if="modal.stage <= 4">3</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div ng-include="modal.view"></div>
+
+            </div>
+
+            <div class="modal-footer">
+                <!--<div class="pull-left">
+                    <button type="button" class="btn btn-success"></button>
+                </div>-->
+                <button type="button" class="btn btn-default" ng-click="$hide()">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>

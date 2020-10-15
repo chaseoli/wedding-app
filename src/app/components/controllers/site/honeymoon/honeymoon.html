@@ -1,0 +1,149 @@
+<!--ctrl.html -->
+
+<!--enables nav scroll color change-->
+<script>
+    	$(window).on('scroll', materialKit.checkScrollForTransparentNavbar);
+</script>
+
+<div class="wrapper">
+	<!--<div class="header header-filter" style="background-image: url('assets/images/backgrounds/beach.jpg')"></div>-->
+
+	<div class="header header-filter" style="background-image: url('assets/images/backgrounds/beach2.jpg'); background-size: cover; background-position: bottom center;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h1 class="title-white">Our Dream Honeymoon</h1>
+					<h4>
+						Help us start off our life together with the trip of a life time. While we prefer donations twoards our honeymoon we have
+						also registered for gifts at several other locations. </h4>
+					<!--<br />
+						<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-danger btn-raised btn-lg">
+							<i class="fa fa-play"></i> Watch video
+						</a>-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--<div class="header header-filter" style="background-image: url('assets/images/backgrounds/shadowpool.jpg'); background-size: cover; background-position: top center;">-->
+
+	<div class="main main-raised">
+		<div class="profile-content">
+			<div class="container">
+				<div class="row">
+					<div class="profile">
+						<div class="avatar-wrapper">
+							<div class="avatar-center-wrap">
+								<div class="avatar"></div>
+							</div>
+						</div>
+						<div class="name">
+							<h3 class="title">Chase & Kristin</h3>
+							<h6>Our Honeymoon Fund</h6>							
+						</div>
+					</div>
+				</div>
+				<div class="description">
+					<h4> Hello friends & family,
+						</br>
+						</br> We are honored you will share in our wedding day. Being blessed with such loving family and friends is our true gift.
+						While we have registered for gifts from at Macy's and on Amazon, we would prefer to indulge in the trip of a lifetime.
+						We plan to travel to Maui, Hawaii for the week following our wedding (though would love to stay there forever). While
+						we're there Chase plans on drinking Mai Tai's of plenty while sitting on the beach watching the tide roll in. Kristin
+						looks foward to taking the drive to Hana and visiting the seven sacred pools. But most of all we look forward to spending
+						the time together. We can't wait to see everyone on November 12th!
+						</br>
+						</br>
+						You may donate to our honeymoon by selecting one of the options below.
+						</br>
+						</br>
+						Love,
+						</br>
+						-Chase & Kristin
+					</h4>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="profile-tabs">
+							<div class="nav-align-center">
+								<ul class="nav nav-pills" role="tablist">
+									<li ng-repeat="cat in ctrl.list">
+										<a href="#{{cat.category + 'Tab'}}" id="{{cat.category}}" role="tab" data-toggle="tab">
+											<i class="material-icons">{{cat.icon}}</i> {{cat.category}}
+										</a>
+									</li>
+								</ul>
+
+								<div class="tab-content gallery">
+
+									<div class="tab-pane text-left" ng-repeat="cat in ctrl.list" id="{{cat.category + 'Tab'}}">
+
+										<table class="table table-striped">
+											<tbody>
+												<tr ng-repeat="(key, i) in cat.items" ng-show="((i.needed-i.received)/i.suggested | number:0) > 0">
+													<td>
+														<div ng-bind="i.name" style="margin:15px; font-size: 1.2em"></div>
+													</td>
+													<td class="text-center hidden-xs">
+
+														<span style="font-size: 1.2em">{{i.suggested | currency}} suggested</span>
+
+														</br>
+
+														<span class="text-muted">{{(i.needed-i.received)/i.suggested | number:0}} remaining</span>
+
+													</td>
+													<td>
+														<button class="btn btn-primary btn-raised btn-round" ng-click="ctrl.giveModal(i, key, cat)">
+																<i class="material-icons">favorite</i> Give
+														</button>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<!-- End Profile Tabs -->
+
+						<div class="card card-signup">
+
+							<div class="header header-primary text-center">
+								<h4 class="text-uppercase">Gifts</h4>
+							</div>
+							<p class="text-divider"></p>
+							<div class="content">
+
+								<table class="table" ng-show="ctrl.gifts.length > 0">
+									<thead>
+										<tr ng-repeat="g in ctrl.gifts">
+											<td>
+												<div class="col-sm-12">
+													<span class="pull-right text-right" ng-bind="g.timestamp | datetime : 'x' : 'MMMM Do hh:mm a'"></span>
+													<strong ng-bind="g.public_giver ? g.giver : 'Someone'"></strong>
+													<span ng-bind="g.public_amount ? ' has made a gift in the amount of ' + (g.amount | currency)  : ' has given a gift '"></span>													twoards "{{g.item.item.name}}."
+												</div>
+											</td>
+										</tr>
+									</thead>
+								</table>
+
+								<div ng-show="ctrl.gifts.length <= 0" class="text-center" style="padding-bottom:20px">No gifts have been given yet.</div>
+
+							</div>
+						</div>
+
+					</div>
+
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>

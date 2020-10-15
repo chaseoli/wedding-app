@@ -1,0 +1,28 @@
+<div class="container-fluid">
+
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <div class="form-group">
+
+            <p>You have selected to pay {{modal.gift.amount | currency}} online for "{{modal.model.name}}." Please provide your
+                credit card information below, when finished click next.
+            </p>
+
+            <p class="lead">
+                <i class="material-icons">phonelink_lock</i> Secure Payment
+            </p>
+
+            <form id="checkout">
+
+                <div id="payment-form"></div>
+
+                <button class="btn btn-raised btn-default" ng-click="modal.selectView('info', 2)">Back</button>
+                <button class="btn btn-raised btn-success" type="submit">Next</button>
+                
+            </form>            
+
+        </div>
+
+    </div>
+
+</div>

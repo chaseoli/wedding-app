@@ -1,0 +1,30 @@
+<div class="container-fluid">
+
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <h3>Thank you for your gift!</h3>
+
+        <h4>
+            We greatly appreciate your support and look forward to seeing you at the Classic Club, on November 12, 2016 in Palm Desert,
+            Ca! We're going to have a lot of fun!
+            </br>
+            -Chase & Kristin
+        </h4>
+
+        <p class="text-muted" ng-show="modal.gift.option === 'payment'">Your payment has been submitted.</p>
+        <p class="text-muted">Your confirmation number is: {{modal.confirmationNum}}</p>
+        <p class="text-muted">
+            If you have any questions about this site or the gift you have given. Please contact us by calling (408) 221-0629.
+        </p>
+
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-raised btn-success" ng-click="$hide()">I'm done. Go back to homepage.</button>
+        </div>
+
+    </div>
+
+</div>

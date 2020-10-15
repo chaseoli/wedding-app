@@ -1,0 +1,22 @@
+<div class="container-fluid">
+
+    <div class="col-sm-8 col-sm-offset-2">
+
+        <div class="form-group">
+
+            <p>
+                You have pledged to pay <strong>{{modal.gift.amount | currency}}</strong> by cash or check for <strong>{{modal.model.name}}</strong> at the wedding.                                
+            </p>
+            <p><i>Online payments are <strong>not</strong> accepted.</i></p>
+            <p class="text-muted">Click next to continue.</p>
+
+            <div class="col-sm-12">
+                <button class="btn btn-raised btn-default" ng-click="modal.selectView('info', 2)">Back</button>
+                <button class="btn btn-raised btn-success" ng-click="modal.selectView('confirm', 4)">Next</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,73 @@
+<style>
+    .allergies {
+        margin-top: 10px;
+        border: none;
+    }
+</style>
+
+<div class="container-fluid" style="padding-top:25px">
+
+    <div class="form-group">
+
+        <p>Please select a meal preference for each person.</p>
+
+        <table class="table table-striped">
+            <thead></thead>
+            <tbody>
+                <tr ng-repeat="p in modal.rsvp.people" ng-if="p.attending">
+                    <td>
+                        <div class="tbl-name" ng-bind="p.first + ' ' + p.last"></div>
+                    </td>                    
+                    <td>
+                        <div class="form-group">
+                            <ul class="list-inline">
+                                <li>
+                                    <div class="radio " ng-show="p.adult">
+                                        <label data-placement="top" data-trigger="hover" data-animation="am-flip-x" bs-popover="modal.popover.chicken">
+                                        <input type="radio" id="optionsRadios{{$index}}1" name="optionsRadios{{$index}}" ng-model="p.meal" value="Chicken">Chicken</label>
+                                    </div>                                    
+                                </li>
+                                <li>
+                                    <div class="radio" ng-show="p.adult">
+                                        <label data-placement="top" data-trigger="hover" data-animation="am-flip-x" bs-popover="modal.popover.salmon">
+                                            <input type="radio" id="optionsRadios{{$index}}2" name="optionsRadios{{$index}}" ng-model="p.meal" value="Salmon">Salmon</label>
+                                    </div>                                    
+                                </li>
+                                <li>
+                                    <div class="radio" ng-show="p.adult">
+                                        <label data-placement="top" data-trigger="hover" data-animation="am-flip-x" bs-popover="modal.popover.vege">
+                                            <input type="radio" id="optionsRadios{{$index}}3" name="optionsRadios{{$index}}" ng-model="p.meal" value="Vege">Vegetarian</label>
+                                    </div>                                    
+                                </li>
+                                <li>
+                                    <div class="radio" ng-show="!p.adult">
+                                        <label data-placement="top" data-trigger="hover" data-animation="am-flip-x" bs-popover="modal.popover.kids">
+                                            <input type="radio" id="optionsRadios{{$index}}4" name="optionsRadios{{$index}}" ng-model="p.meal" value="kids">Kids Meal</label>
+                                    </div>                                    
+                                </li>
+                            </ul>
+
+                            <input id="allergies{{$index}}" name="allergies{{$index}}" ng-model="p.allergies" type="text" value="" placeholder="Food allergies..."
+                                class="form-control" />
+                        </div>
+
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="form-group">
+
+        <p class="text-muted">Click next to continue.</p>
+
+        <div class="col-sm-12">
+            <button class="btn btn-raised btn-default" ng-click="modal.selectView('status', 2)">Back</button>
+            <button class="btn btn-raised btn-success" ng-click="modal.selectView('confirm', 4)">Next</button>
+        </div>
+
+    </div>
+
+</div>

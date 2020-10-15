@@ -1,0 +1,86 @@
+<!--handler.html -->
+
+<!--enables nav scroll color change-->
+<script>
+    	$(window).on('scroll', materialKit.checkScrollForTransparentNavbar);
+</script>
+
+<div class="wrapper">
+
+	<div class="header header-filter" style="background-image: url('assets/images/backgrounds/fountain.jpg'); background-size: cover; background-position: center center;">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<h1 class="title-white">Thank you for your gift!</h1>
+
+					<!--<br />
+						<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-danger btn-raised btn-lg">
+							<i class="fa fa-play"></i> Watch video
+						</a>-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="main main-raised">
+		<div class="profile-content">
+			<div class="container">
+				<div class="row">
+					<div class="profile">						
+						<div class="name">
+							<h3 class="title">Chase & Kristin</h3>
+							<h6>Honeymoon Fund</h6>
+						</div>
+					</div>
+				</div>
+				<div class="description">
+
+					Your email address is <strong ng-bind="ctrl.email"></strong>
+
+					</br>
+					</br>
+
+					<div ng-if="!ctrl.giftDetail">
+						Sorry, we cannot find any gifts registered to <span ng-bind="ctrl.email"></span>
+					</div>
+
+					<div ng-if="ctrl.giftDetail">
+						<h4>
+							You have made the following pledges:
+						</h4>
+
+						<table class="table">
+						
+							<thead>
+								<tr>
+									<th></th>
+									<th>Giver Name</th>
+									<th>Gift</th>
+									<th>Amount</th>
+									<th>Date</th>
+									<th>Options</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr ng-repeat="(key, i) in ctrl.giftDetail">
+									<td>{{$index+1}}</td>
+									<td>{{i.giver}}</td>
+									<td>{{i.item.item.name}}</td>
+									<td>{{i.amount | currency}}</td>
+									<td><span ng-bind="i.timestamp | datetime : 'x' : 'MMMM Do hh:mm a'"></span></td>
+									<td><button class="btn btn-raised btn-danger btn-xs" ng-click="ctrl.deleteGift(key, i)">Delete</button></td>
+								</tr>
+							</tbody>
+						
+						</table>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>

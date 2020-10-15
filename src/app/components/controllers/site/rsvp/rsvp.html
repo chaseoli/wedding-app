@@ -1,0 +1,127 @@
+<!--rsvp.html -->
+
+<style>
+	.card {
+		background-color: #cccccc;
+	}
+</style>
+
+<!--enables nav scroll color change-->
+<script>
+    	$(window).on('scroll', materialKit.checkScrollForTransparentNavbar);
+</script>
+
+<div id="rsvp-site">
+
+	<div id="carousel-generic" class="carousel slide" data-ride="carousel">
+
+		<div id="header">
+
+			<div class="container-fluid">
+
+				<div class="row">
+
+					<div class="col-md-5 col-md-offset-2">
+
+						<!--<h5>Our Wedding</h5>-->
+						<h2 class="white-title">Kindly RSVP by Sunday, October 16th, 2016</h2>
+						
+						</br>
+
+						<h4 class="hidden-xs">
+							The Classic Club
+							</br>
+							Saturday, November 12th, 2016 at 3:30 PM
+							</br>
+							75200 Classic Club Blvd
+							</br>
+							Palm Desert, CA 92211
+						</h4>
+
+						<br />
+
+						<a ng-click="ctrl.rsvpModal()" class="btn btn-danger btn-raised btn-lg">
+							<i class="fa fa-map-marker"></i> RSVP Here
+						</a>
+
+					</div>
+
+					<div class="left-cover" ng-click="ctrl.prevSlide()"></div>
+
+					<div class="right-cover" ng-click="ctrl.nextSlide()"></div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel-generic" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel-generic" data-slide-to="1"></li>
+			<li data-target="#carousel-generic" data-slide-to="2"></li>
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+
+
+
+			<div class="item active header-filter" style="background-image: url('../assets/images/backgrounds/banner2.jpg')">
+				<!--<img src="assets/images/backgrounds/banner2.jpg" alt="...">-->
+				<div class="carousel-caption">
+					<!--The Classic Club-->
+				</div>
+			</div>
+			<div class="item header-filter" style="background-image: url('../assets/images/backgrounds/banner4.jpg')">
+				<!--<img src="assets/images/backgrounds/banner4.jpg" alt="...">-->
+				<div class="carousel-caption">
+					<!--The Mountains-->
+				</div>
+			</div>
+			<div class="item header-filter" style="background-image: url('../assets/images/backgrounds/banner5.jpg')">
+				<!--<img src="assets/images/backgrounds/banner5.jpg" alt="...">-->
+				<div class="carousel-caption">
+					<!--The Entrance-->
+				</div>
+			</div>
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-generic" role="button" data-slide="prev">
+			<!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#carousel-generic" role="button" data-slide="next">
+			<!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+
+	<div id="footer" class="container-fluid">
+
+		<div>
+			<p class="pull-right hidden-xs">Made with
+				<i class="fa fa-heart heart"></i> by <a class="btn" href="https://chaserlabs.com/" style="min-width:80px; padding: 5px 2.5px">ChaserLabs</a>				2016
+			</p>
+		</div>
+
+		<div class="visible-xs">
+			<div class="text-center">
+				<a class="btn" href="https://chaserlabs.com/">
+        			ChaserLabs
+    			</a>
+			</div>
+		</div>
+
+		<div class="left-cover" ng-click="ctrl.prevSlide()"></div>
+
+		<div class="right-cover" ng-click="ctrl.nextSlide()"></div>
+
+	</div>
+	
+
+</div>
+

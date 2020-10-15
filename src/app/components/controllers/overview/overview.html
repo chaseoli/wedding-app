@@ -1,0 +1,26 @@
+<table class="table">
+	<thead>
+		<th>Party</th>
+		<th>Person</th>
+		<th>Adult/Child</th>
+		<th>Attending</th>
+		<th>Meal Selection</th>
+		<th>Allergies</th>
+	</thead>
+	<tbody ng-repeat="(key, value) in ctrl.rsvps track by $index">
+		<tr ng-repeat="p in value.people track by $index">
+			<td>{{key}}</td>
+			<td>{{p.first}} {{p.last}}</td>
+			<td>
+				<span ng-if="p.adult">Adult</span>
+				<span ng-if="!p.adult" class="text-warning">Child</span>
+			</td>
+			<td>
+				<span ng-if="p.attending" class="text-success">Attending</span>
+				<span ng-if="!p.attending" class="text-danger">Declined</span>
+			</td>
+			<td>{{p.meal}}</td>
+			<td>{{p.allergies}}</td>
+		</tr>
+	</tbody>
+</table>

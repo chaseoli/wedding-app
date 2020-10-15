@@ -1,0 +1,7 @@
+
+The following checklist to consider when DEPLOYING to PRODUCTION:
+
+1) ensure that ng-include urls are 'app/xxx/xxx' and not '../app/xxx/xxx'
+the ../ does not compile properly in production and views don't always display
+
+2) imported scss scripts must not be css. Convert imported css to scss extensions

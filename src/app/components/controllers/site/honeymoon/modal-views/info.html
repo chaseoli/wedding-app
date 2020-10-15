@@ -1,0 +1,123 @@
+<form class="form-horizontal" name="form" ng-submit="modal.submitInfo(form.$valid)" novalidate>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Giver Name</label>
+        <div class="col-sm-10">
+            <input type="text" name="giver" placeholder="Name of person or family giving gift...  " class="form-control" ng-model="modal.gift.giver"
+                required />
+            <p ng-show="form.giver.$invalid" class="text-danger">Required so we can tell Chase & Kristin who the gift is from.</p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <!--<label class="col-sm-2 control-label">Your Email</label>
+        <div class="col-sm-10">
+            <input type="text" name="email" placeholder="Email" class="form-control" ng-model="modal.gift.email" required />
+            <p ng-show="form.email.$invalid" class="text-danger">Required for sending you a confirmation.</p>
+        </div>-->
+
+        <label class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+
+            <input class="form-control" required="" type="email" name="email" ng-model="modal.gift.email" ng-pattern="/^.+@.+\..+$/">
+
+            <div ng-messages="form.email.$error" role="alert">
+            
+                <div class="text-danger">
+
+                    <div ng-message="required">
+                        Required for sending you a confirmation.
+                    </div>
+
+                    <div ng-message="pattern">
+                        Must look like an e-mail address.
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Gift Amount</label>
+        <div class="col-sm-10">
+            <input kendo-numeric-text-box k-format="'c'" class="form-control undo-kendo" min="1" k-decimals="2" k-ng-model="modal.gift.amount"
+                style="width: 100%" required/>
+            <div class="text-muted">You may enter a different amount if you prefer.</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <label class="col-sm-2 control-label">Visibility</label>
+
+        <div class="col-sm-10">
+
+            <div class="col-sm-12 text-muted">Show giver's name on this website?</div>
+
+            <div class="col-sm-6">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" ng-model="modal.gift.public_giver" ng-value="true"> Show publically 
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" ng-model="modal.gift.public_giver" ng-value="false"> Keep private
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-12 text-muted">Show gift amount ($USD) on this website?</div>
+
+            <div class="col-sm-6">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios2" ng-model="modal.gift.public_amount" ng-value="true"> Show publically 
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios2" ng-model="modal.gift.public_amount" ng-value="false"> Keep private
+                    </label>
+                </div>
+            </div>
+
+            <span class="text-muted"><strong>Don't worry.</strong> The bride and groom will know your name and the amount of your gift even if you select the option to "keep private."</span>
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-sm-offset-2 col-sm-10" ng-show="modal.gift.giver">
+            <span class="text-muted">The following will be displayed publically:</span>
+            </br>
+            <strong ng-bind="modal.gift.public_giver ? modal.gift.giver : 'Someone'"></strong>
+            <span ng-bind="modal.gift.public_amount ? ' has made a gift in the amount of ' + (modal.gift.amount | currency)  : ' has given a gift '"></span>            twoards "{{modal.gift.item.item.name}}."
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <div class="col-sm-offset-2 col-sm-10">
+            <!--<button class="btn btn-raised btn-default" ng-click="modal.selectView('options', 1)">Back</button>-->
+            <button class="btn btn-raised btn-success" ng-disabled="form.$invalid" type="submit">Next</button>
+        </div>
+
+    </div>
+
+</form>

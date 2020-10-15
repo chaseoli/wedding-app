@@ -1,0 +1,41 @@
+<div class="container-fluid" style="padding-top:25px">
+
+    <div class="form-group">
+
+        <p>Here are the individuals we have listed in your party. <br> Please indicate whether or not each is able to attend
+            the wedding.</p>
+
+        <table class="table table-striped">
+            <thead></thead>
+            <tbody>
+                <tr ng-repeat="p in modal.rsvp.people">
+                    <td>
+                        <div class="tbl-name" ng-bind="p.first + ' ' + p.last"></div>
+                    </td>
+                    <td>
+                        <div class="radio">
+                            <label><input type="radio" name="optionsRadios{{$index}}" ng-model="p.attending" ng-value="true">Is attending</label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="radio">
+                            <label><input type="radio" name="optionsRadios{{$index}}" ng-model="p.attending" ng-value="false">Not attending</label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>            
+        </table>
+
+    </div>
+
+    <div class="form-group">
+
+        <p class="text-muted">Click next to continue.</p>
+
+        <div class="col-sm-12">
+            <button class="btn btn-raised btn-success" ng-click="modal.submitAttendance(modal.rsvp.people, true)">Next</button>
+        </div>
+
+    </div>
+
+</div>

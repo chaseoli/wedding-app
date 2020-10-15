@@ -1,0 +1,100 @@
+<div class="modal ng-scope center am-fade-and-scale" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1070;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header ng-hide" ng-show="title" aria-hidden="true"><button type="button" class="close" aria-label="Close" ng-click="$hide()"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title ng-binding" ng-bind-html="title"></h4>
+            </div>
+            <div class="modal-body ng-binding">
+
+                <h2><span ng-bind="modal.event.title"></span><small ng-show="modal.event.fee > 0" ng-bind="modal.event.fee | currency"
+                        class="pull-right"></small></h2>
+
+
+                <h4>Event Details</h4>
+
+                <dl class="dl-horizontal">
+
+                    <dt>Time</dt>
+                    <dd>
+                        <div ng-bind="modal.event.start | longDateTimeRange: modal.event.end : 'M/D/YYYY h:mm A'"></div>
+                        <div class="text-muted" ng-bind="modal.event.start | singleMultiDay: modal.event.end : 'M/D/YYYY h:mm A'"></div>
+                    </dd>
+
+                    <dt>Categories</dt>
+                    <dd>
+                        <span ng-repeat="t in modal.event.tags"><span ng-bind="t"></span><span ng-if="!$last">, </span></span>
+                    </dd>
+
+                    <dt>Description</dt>
+                    <dd ng-if="!modal.event.short" ng-bind="modal.event.short"></dd>
+                    <dd ng-if="modal.event.short" ng-bind="modal.event.long"></dd>
+
+                    <dt>Age Group</dt>
+                    <dd ng-bind="modal.event.age_group"></dd>
+
+                    <dt>Level</dt>
+                    <dd ng-bind="modal.event.level"></dd>
+
+                    <dt>NTRP</dt>
+                    <dd>
+                        <span ng-bind="modal.event.ntrp_min | sameOrRange: modal.event.ntrp_max"></span>
+                    </dd>
+
+                    <dt>Price</dt>
+                    <dd ng-bind="modal.event.fee | currency"></dd>
+
+                    <dt ng-if="modal.event.instructor">Instructor</dt>
+                    <dd ng-if="modal.event.instructor" ng-bind="modal.event.instructor"></dd>
+
+                    <dt ng-if="modal.event.coordinator">Coordinator</dt>
+                    <dd ng-if="modal.event.coordinator" ng-bind="modal.event.coordinator"></dd>
+
+                    <dt ng-if="!modal.event.allow_signup">Sign ups</dt>
+                    <dd ng-if="!modal.event.allow_signup">Online sign ups are not allowed.</dd>
+
+                </dl>
+
+                <div ng-if="modal.event.allow_signup">
+
+                    <h4>Sign up Details</h4>
+
+                    <dl class="dl-horizontal">
+
+                        <dt>Availability</dt>
+                        <dd>
+                            <div ng-bind="'0' | slots: modal.event.slots"></div>
+                            <div class="text-muted" ng-bind="modal.event.slots + ' Total'"></div>
+                        </dd>
+
+                        <dt>Sign up period</dt>
+                        <dd>
+                            <div>
+                                Entries open <span ng-bind="modal.event.signup_open"></span>
+                            </div>
+                            <div>
+                                Entries close <span ng-bind="modal.event.signup_close"></span>
+                            </div>
+                        </dd>
+
+                        <dt>Cancellations</dt>
+                        <dd ng-if="modal.event.cancel_allow">
+                            Last date to cancel <span ng-bind="modal.event.cancel_before"></span>
+                        </dd>
+                        <dd ng-if="!modal.event.cancel_allow"> No Cancellations </dd>
+
+                    </dl>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <div class="pull-left">
+                    <button type="button" class="btn btn-success" ng-click="modal.signUpModal(modal.event)" ng-if="modal.event.allow_signup">Sign me up!</button>
+                </div>
+                <button type="button" class="btn btn-default" ng-click="$hide()">Cancel</button>
+            </div>
+
+        </div>
+    </div>
+</div>

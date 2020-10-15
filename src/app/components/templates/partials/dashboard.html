@@ -1,0 +1,266 @@
+<!--Upper Nav-->
+<nav class="navbar navbar-fixed-top navbar-color-on-scroll with-aside">
+	<div class="container">
+
+		<div class="navbar-header">
+
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
+            		<span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+        		</button>
+
+			<img style="padding-left:30px" ng-src="{{manage.club.logo}}" alt="{{manage.club.name}}" height="50px">
+
+		</div>
+
+		<div class="collapse navbar-collapse" id="navigation-example">
+
+			<ul class="nav navbar-nav navbar-right visible-xs" ng-include src="'dashbtns.html'"></ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a ui-sref="home" class="btn">home</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/" target="_blank" class="btn btn-simple">
+						<i class="fa fa-twitter"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/" target="_blank" class="btn btn-simple">
+						<i class="fa fa-facebook-square"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/" target="_blank" class="btn btn-simple">
+						<i class="fa fa-instagram"></i>
+					</a>
+				</li>
+				<li>
+					<a class="btn" ng-click="manage.auth.logout()" ng-if="manage.auth.getAuth()">Logout {{manage.status.provider}}</a>
+				</li>
+			</ul>
+
+		</div>
+	</div>
+</nav>
+
+<!--Left Nav Panel-->
+<div class="col-md-2 col-sm-3 hidden-xs dash-nav">
+
+	<ul class="list-unstyled" ng-include src="'dashbtns.html'"></ul>
+
+</div>
+
+<!--Main Content-->
+<div class="col-md-offset-2 col-md-10 col-sm-offset-3 col-sm-9" style="padding:0;">
+
+	<div class="main">
+		
+		<div class="section">
+			
+			<div class="row">
+				
+				<div class="col-xs-12 col-sm-6 col-md-3">
+					<div class="panel panel-default">
+
+						<div class="card-img">
+							<div class="card-filter">
+
+								<div class="card-title white">title</div>
+								<div class="card-sub-title white">
+									<span>subtitle</span>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="panel-body"></div>
+						<div class="card-footer">
+
+							<a class="btn btn-primary">Learn More</a>
+							<a class="btn btn-primary pull-right">Sign Up</a>
+
+						</div>
+
+					</div>
+				</div>
+
+				<div class="col-md-8 col-md-offset-2">
+
+					<div class="panel panel-default">
+						<div class="panel-body">
+							I'm a panel
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-md-8 col-md-offset-2">
+
+					<div class="well">Look I'm a well!</div>
+
+				</div>
+
+			</div>
+			
+		</div>
+		<div class="section text-center">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h2 class="title">{{manage.test}}</h2>
+					<h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful
+						information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button
+						if you want the user to see more.</h5>
+				</div>
+			</div>
+
+			<div class="features">
+				<div class="row">
+					
+					<div class="col-md-4">
+						
+						<div class="feature feature-primary">
+							<i class="material-icons">chat</i>
+							<h4 class="title">First Feature</h4>
+							<p class="description">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing
+								a feature will be enough.</p>
+						</div>
+
+					</div>
+					<div class="col-md-4">
+						
+						<div class="feature feature-success">
+							<i class="material-icons">verified_user</i>
+							<h4 class="title">Second Feature</h4>
+							<p class="description">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing
+								a feature will be enough.</p>
+						</div>
+
+					</div>
+					<div class="col-md-4">
+						
+						<div class="feature feature-danger">
+							<i class="material-icons">fingerprint</i>
+							<h4 class="title">Third Feature</h4>
+							<p class="description">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing
+								a feature will be enough.</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section text-center">
+			
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<h2 class="title">{{manage.test}}</h2>
+					<h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful
+						information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button
+						if you want the user to see more.</h5>
+				</div>
+			</div>
+
+			<div class="features">
+				
+				<div class="row">
+					<div class="col-md-4">
+						
+						<div class="feature feature-primary">
+							<i class="material-icons">chat</i>
+							<h4 class="title">First Feature</h4>
+							<p class="description">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing
+								a feature will be enough.</p>
+						</div>
+
+					</div>
+					<div class="col-md-4">
+						
+						<div class="feature feature-success">
+							<i class="material-icons">verified_user</i>
+							<h4 class="title">Second Feature</h4>
+							<p class="description">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing
+								a feature will be enough.</p>
+						</div>
+
+					</div>
+					<div class="col-md-4">
+						
+						<div class="feature feature-danger">
+							<i class="material-icons">fingerprint</i>
+							<h4 class="title">Third Feature</h4>
+							<p class="description">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing
+								a feature will be enough.</p>
+						</div>
+
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="section text-center">
+			
+			<div class="row">
+				
+				<div class="col-md-8 col-md-offset-2">
+					<h2 class="title">{{manage.test}}</h2>
+					<h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful
+						information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button
+						if you want the user to see more.</h5>
+				</div>
+
+			</div>
+
+			<div class="features">
+				<div class="row">
+					
+					<div class="col-md-4">
+						<div class="feature feature-primary">
+							<i class="material-icons">chat</i>
+							<h4 class="title">First Feature</h4>
+							<p class="description">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing
+								a feature will be enough.</p>
+						</div>
+
+					</div>
+					<div class="col-md-4">
+						
+						<div class="feature feature-success">
+							<i class="material-icons">verified_user</i>
+							<h4 class="title">Second Feature</h4>
+							<p class="description">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing
+								a feature will be enough.</p>
+						</div>
+
+					</div>
+					<div class="col-md-4">
+						
+						<div class="feature feature-danger">
+							<i class="material-icons">fingerprint</i>
+							<h4 class="title">Third Feature</h4>
+							<p class="description">Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing
+								a feature will be enough.</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<footer class="footer above-aside col-md-offset-2 col-md-10 col-sm-offset-3 col-sm-9" ng-include="'../app/components/templates/footer.main.html'"></footer>
+
+<script type="text/ng-template" id="dashbtns.html">
+    	<li>
+			<a ui-sref="home" class="btn btn-simple">Button 1</a>
+		</li>
+		<li>
+			<a ui-sref="home" class="btn btn-simple">Button 2</a>
+		</li>
+</script>

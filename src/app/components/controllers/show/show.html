@@ -1,0 +1,103 @@
+<!--Show.html-->
+
+<style>
+	/*disables scroll bar on animation transitions*/
+	body, html { 
+    overflow: hidden;
+}
+</style>
+
+<!-- Angular Material style sheet -->
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+<div id="show" style="height:100vh; padding-left:50px; padding-right:50px">
+	<div class="show-inner" md-whiteframe="10" layout="column" layout-align="center stretch" style="height:100%">
+		<div class="text-shaddow gold" flex="15" layout="row" layout-align="center center" style="text-align:center">
+			<div flex="45">
+				<h3>Happening now</h3>
+				<h1 class="hand"> <span ng-bind="ctrl.event.current.name"></span> </h1>
+			</div>
+			<div flex="10">
+				<!--<i class="material-icons" style="font-size:80px">keyboard_arrow_right</i>-->
+			</div>
+			<div flex="45">
+				<h3>
+					Up Next
+				</h3>
+				<h1 class="hand">
+					<span ng-bind="ctrl.event.next.name"></span> at <span ng-bind="ctrl.event.next.time"></span>
+				</h1>
+			</div>
+		</div>
+		<div flex="15" layout="column" layout-align="center center"  class="silk">
+			<h1 class="image-info hand" ng-bind="ctrl.posts[ctrl.selectCount].name"></h1>
+			<h2 class="image-info hand" ng-bind="ctrl.posts[ctrl.selectCount].note"></h2>
+		</div>
+		<div flex="70" class="paper">
+
+			<style>
+				.animate {									
+				}				
+				
+				.animate.ng-enter,
+				.animate.ng-leave.ng-leave-active {
+					opacity: 0;
+				}
+				
+				.animate.ng-leave,
+				.animate.ng-enter.ng-enter-active {
+					opacity: 1;
+				}
+				
+				.animate.ng-enter,
+				.animate.ng-leave {
+					/*transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;*/
+					-webkit-transition: 1000ms cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+					-moz-transition: 1000ms cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+					-ms-transition: 1000ms cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+					-o-transition: 1000ms cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+					transition: 1000ms cubic-bezier(0.250, 0.460, 0.450, 0.940) all;
+				}
+				
+				.animate.ng-enter {
+					left: 100%;
+				}
+				
+				.animate.ng-enter.ng-enter-active {
+					left: 0;
+				}
+				
+				.animate.ng-leave {
+					left: 0;
+				}
+				
+				.animate.ng-leave.ng-leave-active {
+					left: -100%;
+				}
+			</style>
+
+			<div ng-repeat="i in ctrl.posts track by $index">
+				<div ng-if="ctrl.selectCount === $index" class="animate full-background" style="background-image:url('{{i.url}}')"></div>
+			</div>
+
+			
+
+			<!--<div class="stamp">
+				<i class="material-icons">location_on</i> <span ng-bind="ctrl.posts[ctrl.selectCount].stamp"></span></h3>
+			</div>-->
+		</div>
+		<div flex="5" class="charcoal" layout="row" layout-align="center center">
+			<div flex=50 style="text-align:left; padding-left: 40px">
+				<strong>Wed-Live</strong> app available on <i class="fa fa-2x fa-android" aria-hidden="true"></i> <i class="fa fa-2x fa-apple"
+					aria-hidden="true"></i>
+			</div>
+			<div flex="50" style="text-align:right; padding-right: 40px">
+				Made with <i class="fa fa-heart heart"></i> by ChaserLabs 2016
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Hidden next image - so loads in the background and ready to display when -->
+<!--<img ng-show="" ng-src="{{ctrl.posts[ctrl.selectCount+1].url}}" alt="">-->
+
